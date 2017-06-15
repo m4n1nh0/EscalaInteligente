@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="EscalaInteligente.Views.Principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Bootstrap Core CSS -->
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
+<!-- Graph CSS -->
+<link href="../css/font-awesome.css" rel="stylesheet"> 
+<!-- jQuery -->
+<link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- lined-icons -->
+<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<script src="../js/amcharts.js"></script>	
+<script src="../js/serial.js"></script>	
+<script src="../js/light.js"></script>	
+<!-- //lined-icons -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+   <!--pie-chart--->
+<script src="../js/pie-chart.js" type="text/javascript"></script>
+ <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#demo-pie-1').pieChart({
+                barColor: '#3bb2d0',
+                trackColor: '#eee',
+                lineCap: 'round',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-2').pieChart({
+                barColor: '#fbb03b',
+                trackColor: '#eee',
+                lineCap: 'butt',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-3').pieChart({
+                barColor: '#ed6498',
+                trackColor: '#eee',
+                lineCap: 'square',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+           
+        });
+
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<!-- header-starts -->
+<div class="header-section">
+<!-- top_bg -->
+	<div class="top_bg">
+		<div class="header_top">
+			<div class="top_right">
+				<ul>
+                    <li>ESCALA INTELIGENTE</li>
+				</ul>
+                </div>
+				<div class="clearfix"> </div>
+		</div>
+	</div>
+    <div class="clearfix"></div>
+<!-- /top_bg -->
+</div>
+<!-- //header-ends -->
+<!--sidebar-menu-->
+<div class="sidebar-menu">
+	<header class="logo1">
+		<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
+	</header>
+	<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+    <div class="menu">
+		<ul id="menu" >
+			<li><a href="inicio.html"><i class="fa fa-tachometer"></i> <span>Inicio</span></a></li>
+			 
+			<li id="menu-academico" ><a href="escalas.html"><i class="fa fa-file-text-o"></i> <span>Escalas</span></a></li>
+		    <li><a href="cadastrarescala.html"><i class="lnr lnr-pencil"></i> <span>Cadastrar Escala</span></a></li>
+		    
+		    <li><a href="funcionarios.html"><i class="lnr lnr-envelope"></i> <span>Funcionarios</span></a></li>
+		    <li><a href="cadastrarfuncionario.html"><i class="lnr lnr-chart-bars"></i> <span>Cadastrar Funcionario</span></a></li>
+		    
+                <li id="menu-academico" ><a href="ajuda.html"><i class="lnr lnr-book"></i> <span>Ajuda</span></a></li>
+                
+		    <li><a href="#"><i class="lnr lnr-chart-bars"></i> <span>Formularios Exemplo</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+		      <ul>
+		    	<li><a href="input.html"> Input</a></li>
+		    	<li><a href="validation.html">Validation</a></li>
+		      </ul>
+		    </li>
+		</ul>
+	</div>
+</div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+							<script>
+                                var toggle = true;
+
+                                $(".sidebar-icon").click(function () {
+                                    if (toggle) {
+                                        $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                                        $("#menu span").css({ "position": "absolute" });
+                                    }
+                                    else {
+                                        $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                                        setTimeout(function () {
+                                            $("#menu span").css({ "position": "relative" });
+                                        }, 400);
+                                    }
+
+                                    toggle = !toggle;
+                                });
+							</script>
+<!--js -->
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/scripts.js"></script>
+<!-- Bootstrap Core JavaScript -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- /Bootstrap Core JavaScript -->
+   <!-- real-time -->
+<script language="javascript" type="text/javascript" src="../js/jquery.flot.js"></script>
+<script src="../js/menu_jquery.js"></script>
+</body>
+</html>
